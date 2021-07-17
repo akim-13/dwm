@@ -15,10 +15,10 @@ static const int swallowfloating         = 0;   /* 1 means swallow floating wind
 static int nomodbuttons                  = 1;   /* allow client mouse button bindings that have no modifier */
 #endif // NO_MOD_BUTTONS_PATCH
 #if VANITYGAPS_PATCH
-static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
+static const unsigned int gappih         = 10;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 10;  /* vert inner gap between windows */
 static const unsigned int gappoh         = 10;  /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov         = 30;  /* vert outer gap between windows and screen edge */
+static const unsigned int gappov         = 10;  /* vert outer gap between windows and screen edge */
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 #endif // VANITYGAPS_PATCH
 #if AUTOSTART_PATCH
@@ -904,22 +904,22 @@ static Key keys[] = {
 	#endif // INSETS_PATCH
 	{ MODKEY,                       XK_Return,     zoom,                   {0} },
 	#if VANITYGAPS_PATCH
-	{ MODKEY|Mod4Mask,              XK_u,          incrgaps,               {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,          incrgaps,               {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_i,          incrigaps,              {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,          incrigaps,              {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_o,          incrogaps,              {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,          incrogaps,              {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_6,          incrihgaps,             {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,          incrihgaps,             {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_7,          incrivgaps,             {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_7,          incrivgaps,             {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_8,          incrohgaps,             {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,          incrohgaps,             {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_9,          incrovgaps,             {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,          incrovgaps,             {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_0,          togglegaps,             {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,          defaultgaps,            {0} },
+	{ MODKEY,                       XK_equal,      incrgaps,               {.i = +5 } },
+	{ MODKEY,                       XK_minus,      incrgaps,               {.i = -5 } },
+//	{ NULL,                         NULL,          incrigaps,              {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,          incrigaps,              {.i = -1 } },
+//	{ MODKEY|Mod4Mask,              XK_o,          incrogaps,              {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,          incrogaps,              {.i = -1 } },
+//	{ MODKEY|Mod4Mask,              XK_6,          incrihgaps,             {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,          incrihgaps,             {.i = -1 } },
+//	{ MODKEY|Mod4Mask,              XK_7,          incrivgaps,             {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_7,          incrivgaps,             {.i = -1 } },
+//	{ MODKEY|Mod4Mask,              XK_8,          incrohgaps,             {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,          incrohgaps,             {.i = -1 } },
+//	{ MODKEY|Mod4Mask,              XK_9,          incrovgaps,             {.i = +1 } },
+//	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,          incrovgaps,             {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_minus,      togglegaps,             {0} },
+	{ MODKEY|ShiftMask,             XK_equal,      defaultgaps,            {0} },
 	#endif // VANITYGAPS_PATCH
 	{ MODKEY,                       XK_Tab,        view,                   {0} },
 	#if SHIFTVIEW_PATCH

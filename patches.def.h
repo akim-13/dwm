@@ -647,7 +647,7 @@
  * in such scenarios the previous window loses fullscreen.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-losefullscreen-6.2.diff
  */
-#define LOSEFULLSCREEN_PATCH 0
+#define LOSEFULLSCREEN_PATCH 1
 
 /* This patch adds helper functions for maximizing, horizontally and vertically, floating
  * windows using keybindings.
@@ -756,12 +756,12 @@
  * monitor (default).
  * https://dwm.suckless.org/patches/pertag/
  */
-#define PERTAG_PATCH 0
+#define PERTAG_PATCH 1
 
 /* Option to store gaps on a per tag basis rather than on a per monitor basis.
  * Depends on both pertag and vanitygaps patches being enabled.
  */
-#define PERTAG_VANITYGAPS_PATCH 0
+#define PERTAG_VANITYGAPS_PATCH 1
 
 /* This controls whether or not to also store bar position on a per
  * tag basis, or leave it as one bar per monitor.
@@ -1069,7 +1069,7 @@
 /* This patch allows you to toggle fullscreen on and off using a single shortcut key.
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-togglefullscreen-6.2.diff
  */
-#define TOGGLEFULLSCREEN_PATCH 0
+#define TOGGLEFULLSCREEN_PATCH 1
 
 /* Minor patch that lets you use the same keyboard shortcut to toggle to the previous layout if the
  * designated layout is already active.
@@ -1119,7 +1119,7 @@
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-vanitygaps-6.2.diff
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-cfacts-vanitygaps-6.2.diff
  */
-#define VANITYGAPS_PATCH 0
+#define VANITYGAPS_PATCH 1
 
 /* This patch adds outer gaps for the monocle layout.
  * Most gaps patches tries to avoid gaps on the monocle layout, as it is often used as a
