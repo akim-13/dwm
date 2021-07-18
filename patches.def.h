@@ -447,7 +447,7 @@
 #define CFACTS_PATCH 1
 
 /* This patch allows color attributes to be set through the command line.
- * https://dwm.suckless.org/patches/cmdcustomize/
+ * https://dwm.suckless.org/patches/cmdcustomize/ 
  */
 #define CMDCUSTOMIZE_PATCH 1
 
