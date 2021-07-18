@@ -1,3 +1,4 @@
+// 248
 /*
  * This file contains patch control flags.
  *
@@ -182,7 +183,7 @@
 #define BAR_TITLE_RIGHT_PAD_PATCH 0
 #define BAR_TITLE_LEFT_PAD_PATCH 1
 
-/**
+/*
  * Bar options
  */
 
@@ -245,7 +246,7 @@
  * modules.
  * https://dwm.suckless.org/patches/centeredwindowname/
  */
-#define BAR_CENTEREDWINDOWNAME_PATCH 0
+#define BAR_CENTEREDWINDOWNAME_PATCH 1
 
 /* Draws a dot indicator overlayed on each tag icon for each client. The selected client
  * is drawn as a larger horizontal line.
