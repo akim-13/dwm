@@ -922,7 +922,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus,      togglegaps,             {0} },
 	{ MODKEY|ShiftMask,             XK_equal,      defaultgaps,            {0} },
 	#endif // VANITYGAPS_PATCH
-	{ MODKEY,                       XK_Tab,        view,                   {0} },
+//  { MODKEY,                       XK_Tab,        view,                   {0} },
 	#if SHIFTVIEW_PATCH
 	{ MODKEY|ShiftMask,             XK_Tab,        shiftview,              { .i = -1 } },
 	{ MODKEY|ShiftMask,             XK_backslash,  shiftview,              { .i = +1 } },
@@ -1158,8 +1158,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_numbersign, setborderpx,            {.i = 0 } },
 	#endif // SETBORDERPX_PATCH
 	#if CYCLELAYOUTS_PATCH
-	{ MODKEY|ControlMask,           XK_comma,      cyclelayout,            {.i = -1 } },
-	{ MODKEY|ControlMask,           XK_period,     cyclelayout,            {.i = +1 } },
+	{ MODKEY,                       XK_Tab,        cyclelayout,            {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_Tab,        cyclelayout,            {.i = +1 } },
 	#endif // CYCLELAYOUTS_PATCH
 	#if MPDCONTROL_PATCH
 	{ MODKEY,                       XK_F1,         mpdchange,              {.i = -1} },
