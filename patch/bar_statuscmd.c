@@ -26,6 +26,7 @@ click_statuscmd_text(Arg *arg, int rel_x, char *text)
 	char ch;
 	#if BAR_DWMBLOCKS_PATCH
 	statussig = -1;
+	dwmblockssig = 0;
 	#else
 	statuscmdn = 0;
 	#endif // BAR_DWMBLOCKS_PATCH

@@ -1,0 +1,37 @@
+j					Focus next window
+k					Focus previous window
+J					Move focused window down the stack
+K					Move focused window up the stack
+ENTER				Make focused window a master
+h					Decrease master size
+l					Increase master size
+q					Close focused window
+<NUM>				Toggle between <NUM> and previously selected tags
+<NUM1><NUM2>		Select multiple tags (works with any number)
+CTRL-<NUM>			Add <NUM> tag to focus (select multiple tags)
+SHIFT-<NUM>			Move focused window to <NUM> tag
+SHIFT-CTRL-<NUM>	Show selected window on both current and <NUM> tags (toggle)
+TAB					Cycle forwards through layouts
+SHIFT-TAB			Cycle backwards through layouts
+SHIFT-BACKSPACE		Shutdown
+Q					Restart DWM
+R					Restart
+CTRL-f				Fullscreen
+CTRL-t				Tile layout
+CTRL-m				Monocle layout
+CTRL-b				Bottom Stack layout
+CTRL-c				Centered Master layout
+CTRL-d				Deck layout
+CTRL-s				Fibonacci (Spiral) layout
+CTRL-g				Grid layout
+CTRL-a				Float layout
+m					Increment the number of master windows
+M					Decrement the number of master windows
+=					Increase gap size
+-					Decrease gap size
+_					Toggle gaps
++					Default gap size
+w					Increase window weight (size) in the stack
+W					Decrease window weight (size) in the stack
+CTRL-w				Set window weight (size) to default
+t					Transfer focused window in stack to master and vice versa

@@ -1,11 +1,42 @@
-/* See LICENSE file for copyright and license details. */
+// Use * to search for a patch under the cursor
+//MONOCLE_LAYOUT 
+//TILE_LAYOUT 
+//BSTACK_LAYOUT 
+// The ones above were skipped
+
+//VANITYGAPS_PATCH 
+//TOGGLEFULLSCREEN_PATCH 
+//PERTAG_VANITYGAPS_PATCH 
+//PERTAG_PATCH 
+//NO_TRANSPARENT_BORDERS_PATCH 
+//NOBORDER_PATCH 
+//LOSEFULLSCREEN_PATCH 
+//FLOATPOS_RESPECT_GAPS_PATCH 
+//FLOATPOS_PATCH 
+//DRAGMFACT_PATCH 
+//DRAGCFACT_PATCH 
+//CYCLELAYOUTS_PATCH 
+//COMBO_PATCH 
+//CFACTS_PATCH 
+//CENTER_TRANSIENT_WINDOWS_BY_PARENT_PATCH 
+//BAR_WINTITLEACTIONS_PATCH 
+//BAR_STATUSCOLORS_PATCH 
+//BAR_CENTEREDWINDOWNAME_PATCH 
+//BAR_TITLE_LEFT_PAD_PATCH 
+//BAR_WINTITLE_PATCH 
+//BAR_TAGS_PATCH 
+//BAR_STATUS_PATCH 
+//BAR_DWMBLOCKS_PATCH 
+//BAR_LTSYMBOL_PATCH 
+//BAR_AWESOMEBAR_PATCH 
+//BAR_STATUSCMD_PATCH
 
 /* appearance */
 #if ROUNDED_CORNERS_PATCH
 static const unsigned int borderpx       = 0;   /* border pixel of windows */
 static const int corner_radius           = 10;
 #else
-static const unsigned int borderpx       = 5;   /* border pixel of windows */
+static const unsigned int borderpx       = 3;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
 static const unsigned int snap           = 32;  /* snap pixel */
 #if SWALLOW_PATCH
@@ -80,7 +111,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int showsystray             = 1;   /* 0 means no systray */
 #endif // BAR_SYSTRAY_PATCH
 /* Indicators: see patch/bar_indicators.h for options */
-static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
+static int tagindicatortype              = INDICATOR_BOTTOM_BAR;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
 #if FAKEFULLSCREEN_CLIENT_PATCH && !FAKEFULLSCREEN_PATCH
@@ -103,7 +134,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "JetBrains Mono Nerd Font:size=7" };
+static const char *fonts[]               = { "JetBrains Mono Nerd Font:size=10" };
 //static const char *fonts[]               = { "monospace:size=7" };
 
 #endif // BAR_PANGO_PATCH
@@ -113,34 +144,34 @@ static char c000000[]                    = "#000000"; // placeholder value
 
 #if BAR_FLEXWINTITLE_PATCH
 #endif // BAR_FLEXWINTITLE_PATCH
-static char normfgcolor[]                = "#bbbbbb";
-static char normbgcolor[]                = "#222222";
-static char normbordercolor[]            = "#444444";
+static char normfgcolor[]                = "#d5c4a1";
+static char normbgcolor[]                = "#1c1c1c";
+static char normbordercolor[]            = "#665c54";
 static char normfloatcolor[]             = "#db8fd9";
 
-static char selfgcolor[]                 = "#eeeeee";
-static char selbgcolor[]                 = "#005577";
-static char selbordercolor[]             = "#005577";
+static char selfgcolor[]                 = "#689d6a";
+static char selbgcolor[]                 = "#1c1c1c";
+static char selbordercolor[]             = "#fbf1c7";
 static char selfloatcolor[]              = "#005577";
 
-static char titlenormfgcolor[]           = "#bbbbbb";
-static char titlenormbgcolor[]           = "#222222";
-static char titlenormbordercolor[]       = "#444444";
-static char titlenormfloatcolor[]        = "#db8fd9";
-
-static char titleselfgcolor[]            = "#eeeeee";
-static char titleselbgcolor[]            = "#005577";
-static char titleselbordercolor[]        = "#005577";
+static char titleselfgcolor[]            = "#689d6a";
+static char titleselbgcolor[]            = "#1c1c1c";
+static char titleselbordercolor[]        = "#fbf1c7";
 static char titleselfloatcolor[]         = "#005577";
 
-static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#222222";
-static char tagsnormbordercolor[]        = "#444444";
+static char titlenormfgcolor[]           = "#d5c4a1";
+static char titlenormbgcolor[]           = "#1c1c1c";
+static char titlenormbordercolor[]       = "#665c54";
+static char titlenormfloatcolor[]        = "#db8fd9";
+
+static char tagsnormfgcolor[]            = "#d5c4a1";
+static char tagsnormbgcolor[]            = "#1c1c1c";
+static char tagsnormbordercolor[]        = "#665c54";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#005577";
-static char tagsselbordercolor[]         = "#005577";
+static char tagsselfgcolor[]             = "#689d6a";
+static char tagsselbgcolor[]             = "#1c1c1c";
+static char tagsselbordercolor[]         = "#fbf1c7";
 static char tagsselfloatcolor[]          = "#005577";
 
 static char hidnormfgcolor[]             = "#005577";
@@ -148,10 +179,45 @@ static char hidselfgcolor[]              = "#227799";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
 
-static char urgfgcolor[]                 = "#bbbbbb";
-static char urgbgcolor[]                 = "#222222";
-static char urgbordercolor[]             = "#ff0000";
+static char urgfgcolor[]                 = "#fbf1c7";
+static char urgbgcolor[]                 = "#fb4934";
+static char urgbordercolor[]             = "#fb4934";
 static char urgfloatcolor[]              = "#db8fd9";
+
+//static char normfgcolor[]                = "#bbbbbb";
+//static char normbgcolor[]                = "#222222";
+//static char normbordercolor[]            = "#444444";
+//static char normfloatcolor[]             = "#db8fd9";
+
+//static char selfgcolor[]                 = "#eeeeee";
+//static char selbgcolor[]                 = "#005577";
+//static char selbordercolor[]             = "#005577";
+//static char selfloatcolor[]              = "#005577";
+
+//static char titlenormfgcolor[]           = "#bbbbbb";
+//static char titlenormbgcolor[]           = "#222222";
+//static char titlenormbordercolor[]       = "#444444";
+//static char titlenormfloatcolor[]        = "#db8fd9";
+
+//static char titleselfgcolor[]            = "#eeeeee";
+//static char titleselbgcolor[]            = "#005577";
+//static char titleselbordercolor[]        = "#005577";
+//static char titleselfloatcolor[]         = "#005577";
+
+//static char tagsnormfgcolor[]            = "#bbbbbb";
+//static char tagsnormbgcolor[]            = "#222222";
+//static char tagsnormbordercolor[]        = "#444444";
+//static char tagsnormfloatcolor[]         = "#db8fd9";
+
+//static char tagsselfgcolor[]             = "#eeeeee";
+//static char tagsselbgcolor[]             = "#005577";
+//static char tagsselbordercolor[]         = "#005577";
+//static char tagsselfloatcolor[]          = "#005577";
+
+//static char urgfgcolor[]                 = "#bbbbbb";
+//static char urgbgcolor[]                 = "#222222";
+//static char urgbordercolor[]             = "#ff0000";
+//static char urgfloatcolor[]              = "#db8fd9";
 
 #if BAR_FLEXWINTITLE_PATCH
 static char normTTBbgcolor[]             = "#330000";
@@ -367,7 +433,7 @@ static Sp scratchpads[] = {
  * them. This works seamlessly with alternative tags and alttagsdecoration patches.
  */
 static char *tagicons[][NUMTAGS] = {
-	[DEFAULT_TAGS]        = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	[DEFAULT_TAGS]        = { "ﮟ", "爵", "", "", "", "", "", "", "" },
 	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
 };
@@ -416,7 +482,10 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "qutebrowser", .tags = 1 << 1)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	RULE(.class = "Brave-browser", .tags = 1 << 1)
+	RULE(.title = "Performance", .tags = 1 << 5)
+	RULE(.title = "Alacritty~", .tags = 1 << 0)
+	RULE(.title = "Alacritty Terminal", .tags = 1 << 3)
 	#if SCRATCHPADS_PATCH
 	RULE(.instance = "spterm", .tags = SPTAG(0), .isfloating = 1)
 	#endif // SCRATCHPADS_PATCH
@@ -428,6 +497,7 @@ static const MonitorRule monrules[] = {
 	/* monitor  tag   layout  mfact  nmaster  showbar  topbar */
 	{  1,       -1,   2,      -1,    -1,      -1,      -1     }, // use a different layout for the second monitor
 	{  -1,      -1,   0,      -1,    -1,      -1,      -1     }, // default
+	{  0,        5,   3,      -1,    -1,      -1,      -1     }, // custommmm
 };
 #else
 static const MonitorRule monrules[] = {
@@ -621,21 +691,24 @@ static const Layout layouts[] = {
 #else
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	#if TILE_LAYOUT
-	{ "[]=",      tile },    /* first entry is default */
+	#if TILE_LAYOUT  // This
+	{ "﬿",      tile },    /* first entry is default */
 	#endif
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	#if MONOCLE_LAYOUT
-	{ "[M]",      monocle },
+	{ "",      NULL },  // This    /* no layout function means floating behavior */
+	#if MONOCLE_LAYOUT  // This
+	//   
+	{ "ﬕ",      monocle },
 	#endif
-	#if BSTACK_LAYOUT
-	{ "TTT",      bstack },
+	#if BSTACK_LAYOUT  // This
+	// ﰧ
+	{ "﯅",      bstack },
 	#endif
 	#if BSTACKHORIZ_LAYOUT
 	{ "===",      bstackhoriz },
 	#endif
-	#if CENTEREDMASTER_LAYOUT
-	{ "|M|",      centeredmaster },
+	#if CENTEREDMASTER_LAYOUT  // This
+	// 𤋮ﮇ 頻
+	{ "恵",      centeredmaster },
 	#endif
 	#if CENTEREDFLOATINGMASTER_LAYOUT
 	{ ">M>",      centeredfloatingmaster },
@@ -643,28 +716,29 @@ static const Layout layouts[] = {
 	#if COLUMNS_LAYOUT
 	{ "|||",      col },
 	#endif
-	#if DECK_LAYOUT
-	{ "[D]",      deck },
+	#if DECK_LAYOUT  // This
+	{ "﬷",      deck },
 	#endif
 	#if FIBONACCI_SPIRAL_LAYOUT
 	{ "(@)",      spiral },
 	#endif
-	#if FIBONACCI_DWINDLE_LAYOUT
-	{ "[\\]",     dwindle },
+	#if FIBONACCI_DWINDLE_LAYOUT  // This
+	{ "侀",     dwindle },
 	#endif
 	#if GRIDMODE_LAYOUT
 	{ "HHH",      grid },
 	#endif
 	#if HORIZGRID_LAYOUT
-	{ "---",      horizgrid },
+	{ "ﱖ",      horizgrid },
 	#endif
 	#if GAPPLESSGRID_LAYOUT
 	{ ":::",      gaplessgrid },
 	#endif
-	#if NROWGRID_LAYOUT
-	{ "###",      nrowgrid },
+	#if NROWGRID_LAYOUT  // This
+	// 全
+	{ "﩯",      nrowgrid },
 	#endif
-	#if CYCLELAYOUTS_PATCH
+	#if CYCLELAYOUTS_PATCH  // This
 	{ NULL,       NULL },
 	#endif
 };
@@ -704,7 +778,7 @@ static const char *xkb_layouts[]  = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} }, \
 	{ MODKEY|Mod4Mask,              KEY,      tagnextmon,     {.ui = 1 << TAG} }, \
 	{ MODKEY|Mod4Mask|ControlMask,  KEY,      tagprevmon,     {.ui = 1 << TAG} },
-#elif COMBO_PATCH
+#elif COMBO_PATCH  // This
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      comboview,      {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -848,17 +922,17 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_k,          rotatestack,            {.i = -1 } },
 	#endif // ROTATESTACK_PATCH
 	#if INPLACEROTATE_PATCH
-	{ MODKEY|Mod4Mask,              XK_j,          inplacerotate,          {.i = +2 } }, // same as rotatestack
-	{ MODKEY|Mod4Mask,              XK_k,          inplacerotate,          {.i = -2 } }, // same as reotatestack
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_j,          inplacerotate,          {.i = +1} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_k,          inplacerotate,          {.i = -1} },
+	{ MODKEY|ShiftMask,              XK_j,          inplacerotate,          {.i = +2 } }, // same as rotatestack
+	{ MODKEY|ShiftMask,              XK_k,          inplacerotate,          {.i = -2 } }, // same as reotatestack
+	{ MODKEY|ControlMask|ShiftMask,    XK_j,          inplacerotate,          {.i = +1} },
+	{ MODKEY|ControlMask|ShiftMask,    XK_k,          inplacerotate,          {.i = -1} },
 	#endif // INPLACEROTATE_PATCH
 	#if PUSH_PATCH || PUSH_NO_MASTER_PATCH
 	{ MODKEY|ControlMask,           XK_j,          pushdown,               {0} },
 	{ MODKEY|ControlMask,           XK_k,          pushup,                 {0} },
 	#endif // PUSH_PATCH / PUSH_NO_MASTER_PATCH
-	{ MODKEY,                       XK_i,          incnmaster,             {.i = +1 } },
-	{ MODKEY,                       XK_d,          incnmaster,             {.i = -1 } },
+	{ MODKEY,                       XK_m,          incnmaster,             {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_m,          incnmaster,             {.i = -1 } },
 	#if FLEXTILE_DELUXE_LAYOUT
 	{ MODKEY|ControlMask,           XK_i,          incnstack,              {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_u,          incnstack,              {.i = -1 } },
@@ -867,8 +941,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
 	#if CFACTS_PATCH
 	{ MODKEY,                       XK_w,          setcfact,               {.f = +0.25} },
-	{ MODKEY|ControlMask,           XK_w,          setcfact,               {.f = -0.25} },
-	{ MODKEY|ShiftMask,             XK_w,          setcfact,               {0} },
+	{ MODKEY|ShiftMask,				XK_w,          setcfact,               {.f = -0.25} },
+	{ MODKEY|ControlMask,           XK_w,          setcfact,               {0} },
 	#endif // CFACTS_PATCH
 	#if ASPECTRESIZE_PATCH
 	{ MODKEY|ControlMask|ShiftMask, XK_e,          aspectresize,           {.i = +24} },
@@ -889,7 +963,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,          movestack,              {.i = -1 } },
 	#endif // MOVESTACK_PATCH
 	#if TRANSFER_PATCH
-	{ MODKEY,                       XK_x,          transfer,               {0} },
+	{ MODKEY,                       XK_t,          transfer,               {0} },
 	#endif // TRANSFER_PATCH
 	#if TRANSFER_ALL_PATCH
 	{ MODKEY|ControlMask,           XK_x,          transferall,            {0} },
@@ -907,6 +981,8 @@ static Key keys[] = {
 	#if VANITYGAPS_PATCH
 	{ MODKEY,                       XK_equal,      incrgaps,               {.i = +5 } },
 	{ MODKEY,                       XK_minus,      incrgaps,               {.i = -5 } },
+	{ MODKEY|ShiftMask,             XK_minus,      togglegaps,             {0} },
+	{ MODKEY|ShiftMask,             XK_equal,      defaultgaps,            {0} },
 //	{ NULL,                         NULL,          incrigaps,              {.i = +1 } },
 //	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,          incrigaps,              {.i = -1 } },
 //	{ MODKEY|Mod4Mask,              XK_o,          incrogaps,              {.i = +1 } },
@@ -919,8 +995,6 @@ static Key keys[] = {
 //	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,          incrohgaps,             {.i = -1 } },
 //	{ MODKEY|Mod4Mask,              XK_9,          incrovgaps,             {.i = +1 } },
 //	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,          incrovgaps,             {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_minus,      togglegaps,             {0} },
-	{ MODKEY|ShiftMask,             XK_equal,      defaultgaps,            {0} },
 	#endif // VANITYGAPS_PATCH
 //  { MODKEY,                       XK_Tab,        view,                   {0} },
 	#if SHIFTVIEW_PATCH
@@ -957,9 +1031,14 @@ static Key keys[] = {
 	#if XRDB_PATCH && !BAR_VTCOLORS_PATCH
 	{ MODKEY|ShiftMask,             XK_F5,         xrdb,                   {.v = NULL } },
 	#endif // XRDB_PATCH
-	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
+	{ MODKEY|ControlMask,           XK_t,          setlayout,              {.v = &layouts[0]} },	// Tile
+	{ MODKEY|ControlMask,           XK_a,          setlayout,              {.v = &layouts[1]} },	// Float
+	{ MODKEY|ControlMask,           XK_m,          setlayout,              {.v = &layouts[2]} },	// Monocle
+	{ MODKEY|ControlMask,           XK_b,          setlayout,              {.v = &layouts[3]} },	// Bottom stack
+	{ MODKEY|ControlMask,           XK_c,          setlayout,              {.v = &layouts[4]} },	// Centered master
+	{ MODKEY|ControlMask,           XK_d,          setlayout,              {.v = &layouts[5]} },	// Deck
+	{ MODKEY|ControlMask,           XK_s,          setlayout,              {.v = &layouts[6]} },	// Fibonacci (spiral)
+	{ MODKEY|ControlMask,           XK_g,          setlayout,              {.v = &layouts[7]} },	// Grid
 	#if COLUMNS_LAYOUT
 	{ MODKEY,                       XK_c,          setlayout,              {.v = &layouts[3]} },
 	#endif // COLUMNS_LAYOUT
@@ -996,7 +1075,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,          unfloatvisible,         {.v = &layouts[0]} },
 	#endif // UNFLOATVISIBLE_PATCH
 	#if TOGGLEFULLSCREEN_PATCH
-	{ MODKEY,                       XK_y,          togglefullscreen,       {0} },
+	{ MODKEY|ControlMask,           XK_f,          togglefullscreen,       {0} },	// Fullscreen
 	#endif // TOGGLEFULLSCREEN_PATCH
 	#if !FAKEFULLSCREEN_PATCH && FAKEFULLSCREEN_CLIENT_PATCH
 	{ MODKEY|ShiftMask,             XK_y,          togglefakefullscreen,   {0} },
@@ -1226,6 +1305,7 @@ static Button buttons[] = {
 	#endif // BAR_WINTITLEACTIONS_PATCH
 	{ ClkWinTitle,          0,                   Button2,        zoom,           {0} },
 	#if BAR_STATUSCMD_PATCH && BAR_DWMBLOCKS_PATCH
+	// changed sigstatusbar with sigdwmblocks. nvm
 	{ ClkStatusText,        0,                   Button1,        sigstatusbar,   {.i = 1 } },
 	{ ClkStatusText,        0,                   Button2,        sigstatusbar,   {.i = 2 } },
 	{ ClkStatusText,        0,                   Button3,        sigstatusbar,   {.i = 3 } },
