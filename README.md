@@ -1,4 +1,4 @@
-This dwm 6.2 (67d76b, 2021-03-29) side project has a different take on dwm patching. It uses preprocessor directives to decide whether or not to include a patch during build time. Essentially this means that this build, for better or worse, contains both the patched _and_ the original code. The aim being that you can select which patches to include and the build will contain that code and nothing more. Due to the complexity of some of the patches dwm-flexipatch has diverged from mainstream dwm by making some core patches non-optional for maintenance reasons. For the classic dwm-flexipatch build refer to branch [dwm-flexipatch-1.0](https://github.com/bakkeby/dwm-flexipatch/tree/dwm-flexipatch-1.0).
+This dwm 6.3 (8b48e30, 2022-04-26) side project has a different take on dwm patching. It uses preprocessor directives to decide whether or not to include a patch during build time. Essentially this means that this build, for better or worse, contains both the patched _and_ the original code. The aim being that you can select which patches to include and the build will contain that code and nothing more. Due to the complexity of some of the patches dwm-flexipatch has diverged from mainstream dwm by making some core patches non-optional for maintenance reasons. For the classic dwm-flexipatch build refer to branch [dwm-flexipatch-1.0](https://github.com/bakkeby/dwm-flexipatch/tree/dwm-flexipatch-1.0).
 
 For example to include the `alpha` patch then you would only need to flip this setting from 0 to 1 in [patches.h](https://github.com/bakkeby/dwm-flexipatch/blob/master/patches.def.h):
 ```c
@@ -13,9 +13,19 @@ Refer to [https://dwm.suckless.org/](https://dwm.suckless.org/) for details on t
 
 If you are experiencing issues then you may want to check out the [Known Issues](https://github.com/bakkeby/dwm-flexipatch/discussions/categories/known-issues) discussion category.
 
+Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6PTWOM9Wz) diagram which tries to organise patches into categories.
+
 ---
 
 ### Changelog:
+
+2022-02-11 - Added the isfreesize version of the sizehints patch and the [tagsync](https://github.com/bakkeby/dwm-flexipatch/pull/219) patch (contributed by [Bagelli](https://github.com/Bagellll))
+
+2021-11-23 - Added the taglabels and underlinetags patches
+
+2021-09-08 - Added the alwayscenter patch
+
+2021-07-27 - Added the winicon patch
 
 2021-05-30 - Added togglelayout and toggletag patches
 
@@ -214,6 +224,9 @@ If you are experiencing issues then you may want to check out the [Known Issues]
 
    - [alttagsdecoration](https://dwm.suckless.org/patches/alttagsdecoration/)
       - provides the ability to use alternative text for tags which contain at least one window
+
+   - [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/)
+      - makes all floating windows centered, like the center patch, but without a rule
 
    - [~alwaysfullscreen~](https://dwm.suckless.org/patches/alwaysfullscreen/)
       - ~prevents the focus to drift from the active fullscreen client when using focusstack\(\)~
@@ -460,6 +473,9 @@ If you are experiencing issues then you may want to check out the [Known Issues]
       - this patch adds key modes (like in vim or emacs) where chains of keyboard shortcuts can be
         performed
 
+   - [killunsel](https://dwm.suckless.org/patches/killunsel/)
+      - kills all visible clients that are not selected (only the selected client will remain)
+
    - [~leftlayout~](http://dwm.suckless.org/patches/leftlayout/)
       - ~moves the layout symbol in the status bar to the left hand side~
 
@@ -616,15 +632,15 @@ If you are experiencing issues then you may want to check out the [Known Issues]
    - [stacker](https://dwm.suckless.org/patches/stacker/)
       - provides comprehensive utilities for managing the client stack
 
-   - [~staticstatus~](https://dwm.suckless.org/patches/staticstatus/)
-      - ~allows the status text to be fixed to the bar on a specific monitor rather than being
-        drawn on the focused monitor~
+   - [staticstatus](https://dwm.suckless.org/patches/staticstatus/)
+      - allows the status text to be fixed to the bar on a specific monitor rather than being
+        drawn on the focused monitor
 
    - [status2d](https://dwm.suckless.org/patches/status2d/)
       - allows colors and rectangle drawing in the dwm status bar
 
-   - [~statusallmons~](https://dwm.suckless.org/patches/statuspadding/)
-      - ~this patch draws and updates the statusbar on all monitors~
+   - [statusallmons](https://dwm.suckless.org/patches/statuspadding/)
+      - this patch draws and updates the statusbar on all monitors
 
    - [statusbutton](https://dwm.suckless.org/patches/statusbutton/)
       - adds a clickable button to the left hand side of the statusbar
@@ -696,6 +712,9 @@ If you are experiencing issues then you may want to check out the [Known Issues]
    - [taggrid](https://dwm.suckless.org/patches/taggrid/)
       - adds an option to place tags in rows like in many other window managers
 
+   - [taglabels](https://dwm.suckless.org/patches/taglabels/)
+      - shows tag + class of master client in the tags section of the bar
+
    - [tagmonfixfs](https://github.com/bakkeby/patches/wiki/tagmonfixfs/)
       - allows moving a fullscreen window to another monitor while remaining in fullscreen
 
@@ -734,12 +753,12 @@ If you are experiencing issues then you may want to check out the [Known Issues]
       - lets you transfer all clients between the master and stack area while increasing or
         decreasing the master area (nmaster) accordingly
 
+   - [underlinetags](https://dwm.suckless.org/patches/underlinetags/)
+      - underlines the selected tag, or optionally all tags
+
    - [unfloatvisible](https://dwm.suckless.org/patches/unfloatvisible/)
       - resets isfloating on any visible windows that have it set and optionally also applies a
         layout
-
-   - [killunsel](https://dwm.suckless.org/patches/killunsel/)
-      - kills all visible clients that are not selected (only the selected client will remain)
 
    - [~urgentborder~](https://dwm.suckless.org/patches/urgentborder/)
       - ~this patch makes "urgent" windows have different colors~
@@ -758,6 +777,9 @@ If you are experiencing issues then you may want to check out the [Known Issues]
    - [warp](https://dwm.suckless.org/patches/warp/)
       - warps the mouse cursor to the center of the currently focused window or screen when the
         mouse cursor is (a) on a different screen or (b) on top of a different window
+
+   - [winicon](https://dwm.suckless.org/patches/winicon/)
+      - adds the window icon next to the window title in the bar
 
    - [windowrolerule](https://github.com/bakkeby/patches/wiki/windowrolerule/)
       - sometimes a single application opens different windows depending on the task at hand and

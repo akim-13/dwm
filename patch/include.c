@@ -20,9 +20,6 @@
 #if COMBO_PATCH
 #include "combo.c"
 #endif
-#if BAR_HOLDBAR_PATCH
-#include "bar_holdbar.c"
-#endif
 #if BAR_LTSYMBOL_PATCH
 #include "bar_ltsymbol.c"
 #endif
@@ -47,11 +44,17 @@
 #if BAR_STATUSCOLORS_PATCH
 #include "bar_statuscolors.c"
 #endif
+#if BAR_WINICON_PATCH
+#include "bar_winicon.c"
+#endif
 #if BAR_TABGROUPS_PATCH
 #include "bar_tabgroups.c"
 #endif
 #if BAR_TAGS_PATCH
 #include "bar_tags.c"
+#endif
+#if BAR_TAGLABELS_PATCH
+#include "bar_taglabels.c"
 #endif
 #if BAR_TAGGRID_PATCH
 #include "bar_taggrid.c"
@@ -76,6 +79,9 @@
 #endif
 #if BAR_SYSTRAY_PATCH
 #include "bar_systray.c"
+#endif
+#if BAR_HOLDBAR_PATCH
+#include "bar_holdbar.c"
 #endif
 #if BAR_VTCOLORS_PATCH
 #include "bar_vtcolors.c"

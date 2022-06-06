@@ -130,7 +130,7 @@
  *
  * Examples:
  *    xsetroot -name "$(echo -e '<\x01a<\x02b<\x03c')"
- *    xsetroot -name "$(echo -e '/\x01d/\x02d/\x03f')"
+ *    xsetroot -name "$(echo -e '/\x01d/\x02e/\x03f')"
  *
  * https://gitlab.com/udiboy1209-suckless/dwm/-/commit/071f5063e8ac4280666828179f92788d893eea40#4b1a539194be7467cefbda22f675a3b7c19ceca7
  * https://dwm.suckless.org/patches/statuscolors/
@@ -192,8 +192,36 @@
  */
 #define BAR_SYSTRAY_PATCH 0
 
-/* Show tag symbols in bar */
+/* Show tag symbols in the bar. */
 #define BAR_TAGS_PATCH 1
+
+/* Show tag symbols + class of master window in the bar.
+ * https://dwm.suckless.org/patches/taglabels/
+ */
+#define BAR_TAGLABELS_PATCH 0
+
+/* This patch underlines the selected tag, or optionally all tags.
+ * https://dwm.suckless.org/patches/underlinetags/
+ */
+#define BAR_UNDERLINETAGS_PATCH 0
+
+/* This patch adds the window icon next to the window title in the bar.
+ *
+ * The patch depends on Imlib2 for icon scaling.
+ * You need to uncomment the corresponding line in config.mk to use the -lImlib2 library
+ *
+ * Arch Linux:
+ *     sudo pacman -S imlib2
+ * Debian:
+ *     sudo apt install libimlib2-dev
+ *
+ * The author recommends adding the compiler flags of -O3 and -march=native to enable auto loop
+ * vectorize for better performance.
+ *
+ * https://github.com/AdamYuan/dwm-winicon
+ * https://dwm.suckless.org/patches/winicon
+ */
+#define BAR_WINICON_PATCH 0
 
 /* Show window title in bar */
 #define BAR_WINTITLE_PATCH 0
@@ -359,6 +387,13 @@
  */
 #define BAR_PADDING_PATCH 0
 
+/* Same as barpadding patch but specifically tailored for the vanitygaps patch in that the outer
+ * bar padding is derived from the vanitygaps settings. In addition to this the bar padding is
+ * toggled in unison when vanitygaps are toggled. Increasing or decreasing gaps during runtime
+ * will not affect the bar padding.
+ */
+#define BAR_PADDING_VANITYGAPS_PATCH 0
+
 /* This patch adds simple markup for status messages using pango markup.
  * This depends on the pango library v1.44 or greater.
  * You need to uncomment the corresponding lines in config.mk to use the pango libraries
@@ -380,9 +415,25 @@
  */
 #define BAR_PANGO_PATCH 0
 
+/* This patch allows the status text to be fixed to the bar on a specific
+ * monitor rather than being drawn on the focused monitor.
+ * The statusallmons patch takes precedence over this patch.
+ * https://dwm.suckless.org/patches/staticstatus/
+ */
+#define BAR_STATICSTATUS_PATCH 0
+
+/* This patch draws and updates the statusbar on all monitors.
+ * https://dwm.suckless.org/patches/statusallmons/
+ */
+#define BAR_STATUSALLMONS_PATCH 0
+
 /* This patch enables colored text in the status bar. It changes the way colors are defined
  * in config.h allowing multiple color combinations for use in the status script.
  * This patch is incompatible with and takes precedence over the status2d patch.
+ *
+ * This patch is compatible with the statuscmd patch with the caveat that the first 16 markers
+ * are reserved for status colors restricting block signals to 17 through 31.
+ *
  * https://dwm.suckless.org/patches/statuscolors/
  */
 #define BAR_STATUSCOLORS_PATCH 0
@@ -412,6 +463,13 @@
 /***
  * Other patches
  */
+
+/* All floating windows are centered, like the center patch, but without a rule.
+ * The center patch takes precedence over this patch.
+ * This patch interferes with the center transient windows patches.
+ * https://dwm.suckless.org/patches/alwayscenter/
+ */
+#define ALWAYSCENTER_PATCH 0
 
 /* This patch allows windows to be resized with its aspect ratio remaining constant.
  * https://dwm.suckless.org/patches/aspectresize/
@@ -457,7 +515,7 @@
 #define AUTORESIZE_PATCH 0
 
 /* This patch adds an iscentered rule to automatically center clients on the current monitor.
- * This patch takes precedence over centeredwindowname and fancybar patches.
+ * This patch takes precedence over centeredwindowname, alwayscenter and fancybar patches.
  * https://dwm.suckless.org/patches/center/
  */
 #define CENTER_PATCH 0
@@ -954,6 +1012,19 @@
  */
 #define SIZEHINTS_RULED_PATCH 0
 
+/* This patch makes dwm obey even "soft" sizehints for new clients. The isfreesize
+ * version is similar to the sizehints ruled patch except it allows you to specify
+ * via client rules which clients this should apply to. Soft sizehints applies by
+ * default to clients that are not ruled, and will be disabled by default for clients
+ * that are.
+ *
+ * Example client rule enabling soft sizehints:
+ *    - RULE(.wintype = WTYPE "DIALOG", .isfloating = 1, .isfreesize = 1)
+ *
+ * https://dwm.suckless.org/patches/sizehints/
+ */
+#define SIZEHINTS_ISFREESIZE_PATCH 0
+
 /* In a multi-head setup monitor 0 is by default the primary screen, with the left and right
  * screen being monitor 1 and 2 respectively. This patch sorts screens left to right (or
  * top to bottom in a vertical layout) which aims to address some inconsistencies when it
@@ -1099,6 +1170,13 @@
  * https://github.com/bakkeby/patches/blob/master/dwm/dwm-tagswapmon-6.2.diff
  */
 #define TAGSWAPMON_PATCH 0
+
+/* Sync tag actions across all monitors.
+ * This is comparable to a sort of pseudo-desktop environment.
+ * Also refer to the desktop patch:
+ * https://github.com/bakkeby/patches/blob/master/dwm/dwm-desktop-6.3.diff
+ */
+#define TAGSYNC_PATCH 0
 
 /* This patch can be useful to the touchpad users because it allows to
  * resize windows using Mod + two-finger scroll. It is useful when
@@ -1298,4 +1376,3 @@
  * This can be optionally disabled in favour of other layouts.
  */
 #define MONOCLE_LAYOUT 1
-

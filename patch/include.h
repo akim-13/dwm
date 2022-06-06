@@ -44,11 +44,20 @@
 #if BAR_STATUSCMD_PATCH
 #include "bar_statuscmd.h"
 #endif
+#if BAR_STATUSCOLORS_PATCH
+#include "bar_statuscolors.h"
+#endif
+#if BAR_WINICON_PATCH
+#include "bar_winicon.h"
+#endif
 #if BAR_TABGROUPS_PATCH
 #include "bar_tabgroups.h"
 #endif
 #if BAR_TAGS_PATCH
 #include "bar_tags.h"
+#endif
+#if BAR_TAGLABELS_PATCH
+#include "bar_taglabels.h"
 #endif
 #if BAR_TAGGRID_PATCH
 #include "bar_taggrid.h"
