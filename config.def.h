@@ -947,6 +947,9 @@ static Key keys[] = {
     { MODKEY,                       XK_Up,         focusdir,               {.i = 2 } }, // up
     { MODKEY,                       XK_Down,       focusdir,               {.i = 3 } }, // down
     #endif // FOCUSDIR_PATCH
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if SWAPFOCUS_PATCH && PERTAG_PATCH
     { MODKEY,                       XK_s,          swapfocus,              {.i = -1 } },
     #endif // SWAPFOCUS_PATCH
@@ -975,6 +978,9 @@ static Key keys[] = {
     #endif // FLEXTILE_DELUXE_LAYOUT
     { MODKEY,                       XK_h,          setmfact,               {.f = -0.05} },
     { MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if CFACTS_PATCH
     { MODKEY,                       XK_w,          setcfact,               {.f = +0.25} },
     { MODKEY|ShiftMask,             XK_w,          setcfact,               {.f = -0.25} },
@@ -1014,6 +1020,9 @@ static Key keys[] = {
     { MODKEY|ShiftMask|ControlMask, XK_a,          updateinset,            {.v = &default_inset } },
     #endif // INSETS_PATCH
     { MODKEY,                       XK_Return,     zoom,                   {0} },
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if VANITYGAPS_PATCH
     { MODKEY,                       XK_equal,      incrgaps,               {.i = +5 } },
     { MODKEY,                       XK_minus,      incrgaps,               {.i = -5 } },
@@ -1041,6 +1050,9 @@ static Key keys[] = {
     { MODKEY|Mod4Mask,              XK_Tab,        shiftviewclients,       { .i = -1 } },
     { MODKEY|Mod4Mask,              XK_backslash,  shiftviewclients,       { .i = +1 } },
     #endif // SHIFTVIEW_CLIENTS_PATCH
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if BAR_WINTITLEACTIONS_PATCH
     { MODKEY|ControlMask,           XK_z,          showhideclient,         {0} },
     #endif // BAR_WINTITLEACTIONS_PATCH
@@ -1110,6 +1122,9 @@ static Key keys[] = {
     { MODKEY|Mod4Mask,              XK_space,      unfloatvisible,         {0} },
     { MODKEY|ShiftMask,             XK_t,          unfloatvisible,         {.v = &layouts[0]} },
     #endif // UNFLOATVISIBLE_PATCH
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if TOGGLEFULLSCREEN_PATCH
     { MODKEY|ControlMask,           XK_f,          togglefullscreen,       {0} },   // Fullscreen
     #endif // TOGGLEFULLSCREEN_PATCH
@@ -1225,6 +1240,9 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_KP_7,       togglemaximize,         {.i = +1} },  /* XK_KP_Home,  */
     { MODKEY|ControlMask,           XK_KP_5,       togglemaximize,         {.i =  0} },  /* XK_KP_Begin, */
     #endif // EXRESIZE_PATCH
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if FLOATPOS_PATCH
     /* Note that due to key limitations the below example kybindings are defined with a Mod3Mask,
      * which is not always readily available. Refer to the patch wiki for more details. */
@@ -1272,6 +1290,9 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_plus,       setborderpx,            {.i = +1 } },
     { MODKEY|ControlMask,           XK_numbersign, setborderpx,            {.i = 0 } },
     #endif // SETBORDERPX_PATCH
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if CYCLELAYOUTS_PATCH
     { MODKEY,                       XK_Tab,        cyclelayout,            {.i = -1 } },
     { MODKEY|ShiftMask,             XK_Tab,        cyclelayout,            {.i = +1 } },
@@ -1340,6 +1361,9 @@ static Button buttons[] = {
     { ClkWinTitle,          0,                   Button3,        showhideclient, {0} },
     #endif // BAR_WINTITLEACTIONS_PATCH
     { ClkWinTitle,          0,                   Button2,        zoom,           {0} },
+//
+// THIS PATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//
     #if BAR_STATUSCMD_PATCH && BAR_DWMBLOCKS_PATCH
     // changed sigstatusbar with sigdwmblocks. nvm
     { ClkStatusText,        0,                   Button1,        sigstatusbar,   {.i = 1 } },
