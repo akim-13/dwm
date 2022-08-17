@@ -117,6 +117,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
    - [bartabgroups](https://dwm.suckless.org/patches/bartabgroups/)
       - turns the titlebar area into a mfact-respecting tab-bar showing each client's title
 
+   - [bidi](https://dwm.suckless.org/patches/bidi/)
+      - adds proper support for Right-To-Left (RTL) languages (such as Farsi, Arabic or Hebrew)
+
    - [center](https://dwm.suckless.org/patches/center/)
       - adds an iscentered rule to automatically center clients on the current monitor
 
@@ -354,6 +357,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
    - [movestack](https://dwm.suckless.org/patches/movestack/)
       - allows you to move clients around in the stack and swap them with the master
 
+   - [nametag](https://dwm.suckless.org/patches/nametag/)
+      - allows the names of tags to be changed during runtime
+
    - [netclientliststacking](https://github.com/bakkeby/patches/wiki/netclientliststacking)
       - adds support for the \_NET\_CLIENT\_LIST\_STACKING atom, needed by certain applications
         like the Zoom video conferencing application
@@ -402,6 +408,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
    - [push](https://dwm.suckless.org/patches/push/)
       - this patch provides a way to move clients up and down inside the client list
 
+   - [renamed_scratchpads](https://github.com/bakkeby/patches/wiki/renamedscratchpads)
+      - variant of the [named scratchpads](https://dwm.suckless.org/patches/namedscratchpads/) patch
+
    - [reorganizetags](https://dwm.suckless.org/patches/reorganizetags/)
       - shifts all clients per tag to leftmost unoccupied tags
       - e.g. if clients A, B, C are tagged on tags 1, 5, 9 respectively, when reorganized they will
@@ -441,6 +450,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
       - this alternative patch enables a scratchpad feature in dwm similar to the scratchpad
         feature in i3wm
 
+   - seamless_restart
+      - allows for selected layout, assigned tags, etc. to be persisted across restarts
+
    - [selfrestart](https://dwm.suckless.org/patches/selfrestart/)
       - restart dwm without the unnecessary dependency of an external script
 
@@ -449,6 +461,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
 
    - [setborderpx](https://dwm.suckless.org/patches/setborderpx/)
       - this patch allows border pixels to be changed during runtime
+
+   - [shift-tools](https://dwm.suckless.org/patches/shift-tools/)
+      - a group of functions that shift clients or views left or right
 
    - [shiftview](https://github.com/chau-bao-long/dotfiles/blob/master/suckless/dwm/shiftview.diff)
       - adds keybindings for left and right circular shift through tags
@@ -559,6 +574,9 @@ Browsing patches? There is a [map of patches](https://coggle.it/diagram/X9IiSSM6
 
    - [tagothermonitor](https://dwm.suckless.org/patches/tagothermonitor/)
       - adds functions and keybindings to tag a window to a desired tag on an adjacent monitor
+
+   - [tagpreview](https://dwm.suckless.org/patches/tag-previews/)
+      - shows a preview of a tag when hovering the tag icon using the mouse
 
    - [tagswapmon](https://github.com/bakkeby/patches/wiki/tagswapmon/)
       - swap all visible windows on one monitor with those of an adjacent monitor
